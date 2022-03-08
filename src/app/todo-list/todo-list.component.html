@@ -1,0 +1,16 @@
+<div>
+    <input type="text" [(ngModel)]="name" placeholder="Add Task">
+    <button (click)="add()">Add</button>
+</div>
+
+<div>
+    <p> {{completedTasks}} remaining out of {{numberOfTask}} </p>
+
+</div>
+
+<div>
+    <ul *ngFor="let item of items" (click)="toggleItem(item)">
+        <li [ngClass]="item.isDone == true ? 'is-done' : null">{{item.name}}</li>
+    </ul>
+
+</div>
